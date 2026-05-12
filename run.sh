@@ -19,5 +19,5 @@ python main.py \
     --mode train_test \
     --seed 2026 \
     --num_workers 8 \
-    --data_base  your_path_to_datasets \
+    --data_base your_path_to_datasets \
     --cache_dir your_path_to_cache_of_LLM_weights \
