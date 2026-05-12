@@ -13,7 +13,6 @@ We propose GluLLM, a multimodal adapter-based framework that enhances pretrained
 |-----------|-------------|
 | REPLACE-BG | [Access from JCHR](https://public.jaeb.org/datasets/diabetes) |
 | Móstoles | [Access from PLoS ONE](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0225817) |
-|-----------|-------------|
 
 ## Usage
 To train and test the model, run:
@@ -21,23 +20,38 @@ To train and test the model, run:
 bash run.sh
 ```
 
+## Quick Start
+```python
+python demo.py \
+--mn llama1 \
+--cache_dir your_path_to_cache_of_LLM_weights
+```
+
+We provide a fully self-contained synthetic demo (demo.py) that:
+- Generates synthetic CGM (continuous glucose monitoring) time series for configurable numbers of virtual subjects across train / val / test splits.
+- Simulates realistic diurnal glucose patterns, meal-driven spikes, random physiological variation, and bolus insulin events.
+- Pre-computes Time-Dependent Information (TDI) embeddings via the LLM backbone for every patch across all sliding windows.
+- Runs the full train → validate → test loop with autoregressive inference.
 
 ## Directory Hierarchy
 ```
 |—— .gitignore
 |—— args_generator.py
+|—— demo.py
 |—— layers
 |    |—— pjn.py
 |—— main.py
 |—— models
 |    |—— GluLLM.py
 |    |—— model_info.py
+|    |—— TDI.py
 |—— run.sh
 |—— utils
 |    |—— metrics.py
 |    |—— timefeatures.py
 |    |—— tools.py
 ```
+
 ## Acknowledgments & References
 This work was inspired by the folloing papers
 - [AutoTimes](https://neurips.cc/virtual/2024/poster/95975)

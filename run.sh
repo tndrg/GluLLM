@@ -19,5 +19,5 @@ python main.py \
     --mode train_test \
     --seed 2026 \
     --num_workers 8 \
-    --data_base /novo/projects/departments/nnrco/genetic_department/share/ZTZU_share/storage/glullm/data/ \
-    --cache_dir /novo/projects/departments/nnrco/genetic_department/share/ZTZU_share/storage/glullm/llm_cache \
+    --data_base  your_path_to_datasets \
+    --cache_dir your_path_to_cache_of_LLM_weights \

@@ -79,6 +79,7 @@ def args_bglp():
     parser.add_argument('--lradj', type=str, default='type1', help='adjust learning rate')
     parser.add_argument('--use_amp',action='store_false',help='use automatic mixed precision training (default true)')
     parser.add_argument('--weight_decay', type=float, default=0)
+    parser.add_argument('--tmax', type=int, default=10, help='tmax in cosine anealing lr')
     parser.add_argument('--mix_embeds', help='mix embeds', action='store_false')
     parser.add_argument('--use_prompt', help='whether to use personalised prompts', action='store_false')
     parser.add_argument('--use_scheduler', action='store_true',  help='Use learning rate scheduler')
